@@ -18,7 +18,7 @@ CATEGORIAS_VALIDAS = {
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATASET_DIR = os.path.join(PROJECT_ROOT, 'dataset')
-CSV_PATH_BASE = os.path.join('recull_receptes_cat')
+CSV_PATH_BASE = os.path.join(DATASET_DIR,'recull_receptes_cat')
 
 FIELDNAMES = ['id', 'categoria', 'recepta', 'temps_preparacio',
         'racions', 'dificultat','estacio', 'tipus_plat', 'ingredients',
