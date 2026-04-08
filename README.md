@@ -1,4 +1,4 @@
-# Receptes.cat Scrapper
+# Recull de receptes  de Receptes.cat 
 
 Scraper en Python que recopila receptes del lloc [receptes.cat](https://www.receptes.cat/) i les guarda en format CSV per el seu posterior anàlisis.
 
@@ -7,6 +7,12 @@ Scraper en Python que recopila receptes del lloc [receptes.cat](https://www.rece
 Aquest projecte es realitaza dins el context de la assignatura **Tipologia i cicle de vida de les dades** del [Máster en Ciència de Dades de la Universitat Oberta de Catalunya](https://www.uoc.edu/ca/estudis/masters/master-universitari-data-science) amb l'objectiu d'extreure les receptes del portal receptes.cat tot recorrent automàticament les categories, extreu la inforamció detallada de cada recepta i la desa en un fitxer CSV estructurat.
 
 El scraper està dissenyat per ser **resistent a talls de connexió**: escriu cada recepta al CSV immediatament i, en cas de fallada, pot reprende l'execucció sense tornar a descarregar les receptes ja guardades.
+
+## Membres de l'equip
+
+L'activitat s'ha realitzat conjuntament, els integrants són:
+- **Berta Serra Aguilera** 
+- **Martí Serra Aguilera**
 
 ## Requisits
 
