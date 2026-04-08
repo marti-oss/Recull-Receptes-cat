@@ -16,9 +16,12 @@ CATEGORIAS_VALIDAS = {
     'altres':              'https://www.receptes.cat/cat/Altres',
 }
 
-CSV_PATH_BASE = 'dataset/recull_receptes_cat'
-FIELDNAMES = ['id', 'nom_recepta', 'categoria', 'tipus_plat', 'estacio',
-        'dificultat', 'racions', 'temps', 'ingredients',
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATASET_DIR = os.path.join(PROJECT_ROOT, 'dataset')
+CSV_PATH_BASE = os.path.join('recull_receptes_cat')
+
+FIELDNAMES = ['id', 'categoria', 'recepta', 'temps_preparacio',
+        'racions', 'dificultat','estacio', 'tipus_plat', 'ingredients',
         'utensilis', 'elaboracio', 'url']
 
 parser = argparse.ArgumentParser()
@@ -29,7 +32,7 @@ parser.add_argument(
 )
 args = parser.parse_args()
 
-os.makedirs("dataset", exist_ok=True)
+os.makedirs(DATASET_DIR, exist_ok=True)
 
 
 def procesar_csv(csv_path, url_categoria_filtro):
@@ -67,7 +70,7 @@ if args.categoria:
     for cat in categorias_a_procesar:
         csv_path = f'{CSV_PATH_BASE}_{cat}.csv'
         url_categoria = CATEGORIAS_VALIDAS[cat]
-        print(f"\n=== Processant categoria: {cat} ===")
+        print(f"\n Processant categoria: {cat} - URL: {url_categoria} - CSV: {csv_path}")
         procesar_csv(csv_path, url_categoria)
 else:
     procesar_csv(f'{CSV_PATH_BASE}.csv', None)

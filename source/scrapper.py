@@ -8,7 +8,7 @@ import random
 
 url = 'https://www.receptes.cat/'
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.79 Safari/537.36"
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.79 Safari/537.36 UOC-Recull-Receptes-Scrapper/1.0"
 }
 
 
@@ -308,7 +308,7 @@ def extraer_detalles_receta(url_receta):
 
     receta = {
         "id": "",
-        "nom_recepta": "",
+        "recepta": "",
         "categoria": "",
         "tipo_plato": "",
         "estacion": [],
@@ -323,9 +323,9 @@ def extraer_detalles_receta(url_receta):
 
     receta["id"] = extraer_id_receta(url_receta)
 
-    nom_recepta = soup.find("h1")
-    if nom_recepta:
-        receta["nom_recepta"] = limpiar_espacios(nom_recepta.get_text())
+    recepta = soup.find("h1")
+    if recepta:
+        receta["recepta"] = limpiar_espacios(recepta.get_text())
 
     lineas = [limpiar_espacios(x) for x in soup.get_text("\n").split("\n")]
     lineas = [x for x in lineas if x]
@@ -366,13 +366,13 @@ def extraer_detalles_receta(url_receta):
 def normalizar_receta_para_csv(receta):
     return {
         'id': receta.get('id', ''),
-        'nom_recepta': receta.get('nom_recepta', ''),
         'categoria': receta.get('categoria', ''),
-        'tipus_plat': receta.get('tipo_plato', ''),
-        'estacio': ' | '.join(receta.get('estacion', [])),
-        'dificultat': receta.get('dificultad', ''),
+        'recepta': receta.get('recepta', ''),
+        'temps_preparacio': receta.get('tiempo', ''),
         'racions': receta.get('raciones', ''),
-        'temps': receta.get('tiempo', ''),
+        'dificultat': receta.get('dificultad', ''),
+        'estacio': ' | '.join(receta.get('estacion', [])),
+        'tipus_plat': receta.get('tipo_plato', ''),
         'ingredients': ' | '.join(receta.get('ingredientes', [])),
         'utensilis': ' | '.join(receta.get('utensilios', [])),
         'elaboracio': receta.get('elaboracion', ''),

@@ -1,12 +1,15 @@
 # Recull de receptes  de Receptes.cat 
 
-Scraper en Python que recopila receptes del lloc [receptes.cat](https://www.receptes.cat/) i les guarda en format CSV per el seu posterior anàlisis.
+Scraper en Python que recopila receptes del lloc [receptes.cat](https://www.receptes.cat/) i les guarda en format CSV pel seu posterior anàlisis.
 
 ## Descripció
 
-Aquest projecte es realitaza dins el context de la assignatura **Tipologia i cicle de vida de les dades** del [Máster en Ciència de Dades de la Universitat Oberta de Catalunya](https://www.uoc.edu/ca/estudis/masters/master-universitari-data-science) amb l'objectiu d'extreure les receptes del portal receptes.cat tot recorrent automàticament les categories, extreu la inforamció detallada de cada recepta i la desa en un fitxer CSV estructurat.
+Aquest projecte es realitaza dins el context de la assignatura **Tipologia i cicle de vida de les dades** del [Máster en Ciència de Dades de la Universitat Oberta de Catalunya](https://www.uoc.edu/ca/estudis/masters/master-universitari-data-science).
 
-El scraper està dissenyat per ser **resistent a talls de connexió**: escriu cada recepta al CSV immediatament i, en cas de fallada, pot reprende l'execucció sense tornar a descarregar les receptes ja guardades.
+Aquest dataset és una recopilació de dades estructurades que conté informació de receptes extretes de la xarxa social de cuina en català Receptes.cat. El conjunt de les dades inclou milers de receptes escrites en català; cada recepta conté informació tècnica de la recepta (nom del plat, categoria culinària, ingredients, temps de preparació, dificultat, elaboració).
+
+Amb la informació disponible, es permet als usuaris replicar una recepta. Fent un anàlisis global, es podrien veure les tendències de la cuina contemporània.
+
 
 ## Membres de l'equip
 
